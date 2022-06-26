@@ -9,10 +9,19 @@ public class ObstacleController : MonoBehaviour
     int _damege = 1;
     float _speed;
     Vector2 _dir;
+    ObstacleGenerator _obstacleGenerator;
+    SpriteRenderer _spriteRenderer;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _obstacleGenerator = FindObjectOfType<ObstacleGenerator>();
+        _damege = _obstacleGenerator.Damege;
+        _speed = _obstacleGenerator.Speed;
+        _dir = _obstacleGenerator.Dir;
+        _spriteRenderer.sprite = _obstacleGenerator.Sprite;
+
     }
 
     void Update()
@@ -26,15 +35,5 @@ public class ObstacleController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void ChangeDamege(int damege)
-    {
-        _damege = damege;
-    }
-
-    public void ChangeDir(Vector2 dir)
-    {
-        _dir = dir;
     }
 }
