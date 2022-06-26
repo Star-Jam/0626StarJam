@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
+    public int Damage => _damege;
+
+    [SerializeField]
+    [Header("ジェネレーター")]
+    GameObject _generator;
+
     Rigidbody2D _rb;
     string _playerTag = "Player";
-    int _damege = 1;
+    int _damege;
     float _speed;
-    Vector2 _dir;
+    Vector3 _dir;
     ObstacleGenerator _obstacleGenerator;
     SpriteRenderer _spriteRenderer;
 
@@ -16,12 +22,11 @@ public class ObstacleController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _obstacleGenerator = FindObjectOfType<ObstacleGenerator>();
+        _obstacleGenerator = _generator.GetComponent<ObstacleGenerator>();
         _damege = _obstacleGenerator.Damege;
         _speed = _obstacleGenerator.Speed;
         _dir = _obstacleGenerator.Dir;
         _spriteRenderer.sprite = _obstacleGenerator.Sprite;
-
     }
 
     void Update()
@@ -35,5 +40,10 @@ public class ObstacleController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
