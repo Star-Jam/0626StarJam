@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 	[SerializeField] Image[] _lifeImages;
 
 
-	[SerializeField] Text _countText;
+	[SerializeField] public Text _countText;
 	[SerializeField] float _speed = 2; // スピード：Inspectorで指定
 
 	float _vx = 0;
@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
 	void Start () 
 	{
+		_socre = 0;
+
 		hitCount = HitCount.hit0;
 
 		_rbody = GetComponent<Rigidbody2D>();
@@ -95,6 +97,8 @@ public class Player : MonoBehaviour
 			_lifeImages[0].enabled = false;
 
 			hitCount = HitCount.hit0;
+
+			//DontDestroyOnLoad(_countText);
 
 			SceneManager.LoadScene("GameOverScene");
 		}
