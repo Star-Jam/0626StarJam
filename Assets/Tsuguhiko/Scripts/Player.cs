@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
 			hitCount = HitCount.hit0;
 
-			//SceneManager.LoadScene("GameOver");
+			SceneManager.LoadScene("GameOverScene");
 		}
 	}
 
