@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObstacleController : MonoBehaviour
 {
+    
+
+    bool _hit1 = false;
+    bool _hit2 = false;
     public int Damage => _damege;
 
     [SerializeField]
@@ -20,6 +25,7 @@ public class ObstacleController : MonoBehaviour
 
     void Awake()
     {
+        
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _obstacleGenerator = _generator.GetComponent<ObstacleGenerator>();
@@ -38,8 +44,9 @@ public class ObstacleController : MonoBehaviour
     {
         if (collision.gameObject.tag == _playerTag)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
+        
     }
 
     void OnBecameInvisible()
@@ -47,3 +54,5 @@ public class ObstacleController : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+

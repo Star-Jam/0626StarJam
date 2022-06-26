@@ -167,13 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacle:
-  - _obstacleName: "\u65B0\u805E\u7D19"
-    _damege: 1
-    _minSpeed: 5
-    _maxSpeed: 5
-    _minDir: {x: -10, y: -1}
-    _maxDir: {x: -0.5, y: -0.5}
-    _sprite: {fileID: 21300000, guid: a6bf4b4b2a0863a4898fb895c5ab833e, type: 3}
   - _obstacleName: "\u77F3"
     _damege: 1
     _minSpeed: 5
@@ -181,6 +174,13 @@ MonoBehaviour:
     _minDir: {x: -10, y: -1}
     _maxDir: {x: -0.5, y: -0.5}
     _sprite: {fileID: 21300000, guid: 2e5c2833fa1e8254f9d95ed6f28a6ba2, type: 3}
+  - _obstacleName: "\u65B0\u805E\u7D19"
+    _damege: 1
+    _minSpeed: 5
+    _maxSpeed: 5
+    _minDir: {x: -10, y: -1}
+    _maxDir: {x: -0.5, y: -0.5}
+    _sprite: {fileID: 21300000, guid: a6bf4b4b2a0863a4898fb895c5ab833e, type: 3}
   - _obstacleName: "\u77F3(\u8907\u6570)"
     _damege: 1
     _minSpeed: 5
@@ -202,6 +202,8 @@ MonoBehaviour:
   _minSeconds: 1
   _maxSeconds: 1
   _obstacleObject: {fileID: 1476750677226242595}
+  _playerTag: Player
+  _followName: "\u77F3"
 --- !u!1001 &6644528582203368016
 PrefabInstance:
   m_ObjectHideFlags: 0
