@@ -4,12 +4,15 @@ using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
-    [SerializeField] Text _resultText;
+    
 
+    int _resultScore;
     Player player;
+    GameManager gameManager;
     void Start()
     {
-        _resultText.text = player._socre.ToString();
+        _resultScore = player._socre;
+        player._countText.text = player._socre.ToString();
     }
 
 }
